@@ -5,8 +5,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private float moveSpeed;
+
+    [SerializeField] private float moveSpeed;
+
+    [SerializeField] private GameObject weapon;
+
+    [SerializeField] private Transform shootTransform;
+
+    [SerializeField] private float shootInterval = 0.1f;
+
+    private float lasShotTime = 0f;
+
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +37,17 @@ public class Player : MonoBehaviour
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float toX = Math.Clamp(mousePos.x, -2.35f, 2.35f);
-        transform.position = new Vector3(toX, transform.position.y, 0f);
+        transform.position = new Vector3(toX, transform.position.y, transform.position.z);
+
+        Shoot();
+    }
+
+    void Shoot()
+    {
+        if (Time.time - lasShotTime > shootInterval)
+        {
+            Instantiate(weapon, shootTransform.position, Quaternion.identity);
+            lasShotTime = Time.time;
+        }
     }
 }
