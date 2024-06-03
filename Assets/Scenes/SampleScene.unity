@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 512836623}
   - component: {fileID: 512836622}
   - component: {fileID: 512836621}
-  - component: {fileID: 512836624}
   - component: {fileID: 512836625}
   - component: {fileID: 512836626}
   - component: {fileID: 512836627}
@@ -233,22 +232,6 @@ Transform:
   - {fileID: 1082001321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &512836624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512836620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6572daae2de8144178aa37e03f87b72b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  weapon: {fileID: 7389702183385163288, guid: 29b953154a98042c9a0acc92ff42cbc8, type: 3}
-  shootTransform: {fileID: 1082001321}
-  shootInterval: 0.1
 --- !u!50 &512836625
 Rigidbody2D:
   serializedVersion: 4
@@ -326,7 +309,7 @@ MonoBehaviour:
   moveSpeed: 0
   weapon: {fileID: 7389702183385163288, guid: 29b953154a98042c9a0acc92ff42cbc8, type: 3}
   shootTransform: {fileID: 1082001321}
-  shootInterval: 0.05
+  shootInterval: 0.1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &906021747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1093893569
 SpriteRenderer:
   m_ObjectHideFlags: 0
