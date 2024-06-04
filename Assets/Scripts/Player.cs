@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     private float lasShotTime = 0f;
 
+    private float hp = 10f;
+
     // Update is called once per frame
     void Update()
     {
@@ -48,6 +50,20 @@ public class Player : MonoBehaviour
         {
             Instantiate(weapon, shootTransform.position, Quaternion.identity);
             lasShotTime = Time.time;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Game Over");
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Coin"))
+        {
+            GameManager.instance.IncreaseCoin();
+            Destroy(other.gameObject);
         }
     }
 }
